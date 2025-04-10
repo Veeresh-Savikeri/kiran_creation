@@ -1,0 +1,39 @@
+*{
+  font-size: 14px;
+  font-family: sans-serif;
+}
+.res_list{
+  cursor: pointer;
+}
+.res_ico {
+  display: none;
+}
+@media (max-width: 1128px) {
+  .res_ico {
+    display: block;
+  }
+}
+
+@media (max-width: 1128px) {
+    .res_list{
+        display: none;
+    }
+}
+.hov_list li { 
+list-style-type: none;
+color: black;
+padding: 8px;
+text-decoration: none;
+
+}
+.hov_list li span{
+  font-weight: bold;
+}
+.view_all{
+  display: none;
+}
+
+.view:hover .view_all{
+  display: block;
+
+}
