@@ -14,7 +14,9 @@ const contactSchema = new mongoose.Schema({
     },
     message: {
         type: String,
-
+    },
+    approve: {
+        type: Boolean,
     },
 }, { timestamps: true });
 const Contact = mongoose.model('contacts', contactSchema);
