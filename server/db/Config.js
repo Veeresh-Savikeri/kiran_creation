@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-const MONGO_URI = 'mongodb://localhost:27017/Kiran_Creation'; // Replace with your MongoDB URI
+const MONGO_URI = 'mongodb://127.0.0.1:27017/Kiran_Creation'; // Use IPv4 instead of localhost
 
 // Connect to MongoDB
-mongoose.connect(MONGO_URI,)
+mongoose.connect(MONGO_URI, {
+   
+})
 .then(() => {
     console.log('Connected to MongoDB successfully');
 })
