@@ -1,15 +1,30 @@
-/* Ensure the image container is properly styled */
-.c1 {
-    position: relative;
-    overflow: hidden; /* Ensures the "Shop Now" div doesn't overflow the image */
+.c1{
+    width: 50%;
+    
 }
-
 /* Style the "Shop Now" div */
 .shop {
     max-width: 80%; /* Limit the width of the "Shop Now" div */
-    padding: 1rem;
-    background-color: rgba(365, 365, 365, 0.7); /* Semi-transparent background */
-    color: white;
-    border-radius: 10px;
+    background-color: rgba(365, 365, 365, 0.9); /* Semi-transparent background */
+    color: #ffffff;
+    border-radius: 20px;
     position: absolute; /* Position it absolutely within the image container */
+    top: 70%;
+    left: 30%;
+}
+.carContainer{
+    flex-direction: row;
+}
+@media (max-width: 768px) {
+    .carContainer{
+       
+        flex-direction: column;
+    }
+    .c1{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .shop{
+        display: none;
+    }
 }
