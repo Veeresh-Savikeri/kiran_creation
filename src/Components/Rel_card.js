@@ -1,22 +1,25 @@
 import React from 'react'
-import kiran from "../imgs/kiran.jpg";
+
+
 import '../Css/std_vcard.css';
-export default function Rel_card() {
+import '../Css/home.css';
+
+export default function Rel_card(props) {
   return (
-    <div className='marquee'>
+    <div className='marquee '>
       <div
-          className="card m-5  shadow-lg card"
-          style={{ width: "18rem", borderRadius: "10px",cursor:"pointer"}}
+          className="card m-4 shadow-lg cardBox"
+        
         >
           <img
-            src={kiran}
-            className="card-img-top"
+            src={props.pto}
+            className="card-img-top cardImg"
             alt="..."
-            style={{ borderRadius: "10px", height: "200px" }}
+            
           />
           <div className="card-body">
-            <h5 className="card-title fw-bold">Card title</h5>
-            <p className="card-text">100 Starting at rs-250</p>
+            <h5 className="fs-4 fw-bold">Card title</h5>
+            <p className="fs-7">100 Starting at rs-250</p>
             
           </div>
         </div>

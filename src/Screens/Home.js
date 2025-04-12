@@ -2,16 +2,20 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import Carousel from "../Components/Carousel";
 import Rel_card from "../Components/Rel_card";
+import stdVCard from "../imgs/stdVCard.png";
+import clsVCard from "../imgs/clsVCard.webp";
+import '../Css/home.css'
+
 
 export default function Home() {
   function scrollLeft() {
     const container = document.querySelector(".scroll-container");
-    container.scrollBy({ left: -700, behavior: "smooth" });
+    container.scrollBy({ left: -300, behavior: "smooth" });
   }
 
   function scrollRight() {
     const container = document.querySelector(".scroll-container");
-    container.scrollBy({ left: 700, behavior: "smooth" });
+    container.scrollBy({ left: 300, behavior: "smooth" });
   }
 
 
@@ -28,8 +32,8 @@ export default function Home() {
           </button>
 
           <div className="scroll-container d-flex align-items-center">
-            <Rel_card />
-            <Rel_card />
+            <Rel_card pto={stdVCard}/>
+            <Rel_card  pto={clsVCard}/>
             <Rel_card />
             <Rel_card />
             <Rel_card />

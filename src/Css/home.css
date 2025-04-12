@@ -1,0 +1,21 @@
+.cardImg{
+    border-radius: 10px;
+     height: 200px;
+}
+.cardBox{
+    width: 18rem;
+    border-radius: 10px;
+    cursor: pointer;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+@media (max-width: 768px) {
+    .cardImg{
+        height: 100px;
+    }
+    .cardBox{
+        width: 12rem;
+    }
+}

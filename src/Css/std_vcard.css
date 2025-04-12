@@ -7,7 +7,6 @@
   
   .marquee {
     display: flex;
-   
   }
   
   @keyframes marquee {
@@ -35,7 +34,7 @@
   overflow-x: auto;
   white-space: nowrap;
   scroll-behavior: smooth;
-  padding: 10px 0;
+ 
 }
 
 .scroll-left,
@@ -61,5 +60,5 @@
 
 .scroll-container > * {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 0px;
 }
