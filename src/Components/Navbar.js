@@ -5,13 +5,13 @@ import Menu from "./Menu";
 import Menu_hov_list from "./Menu_hov_list";
 import Visiting_hov from "../nav_hovList/Visiting_hov";
 
-
-
-
 import { useNavigate } from "react-router-dom";
+import Login from "./Login";
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
+  const [login, setLogin] = useState(false);
+
   const [ic, setIc] = useState("fa fa-bars");
   const navigate = useNavigate();
   function handleMenuClick() {
@@ -82,11 +82,14 @@ export default function Navbar() {
                   navigate("/contact");
                 }}
               ></i>
-              <i
-                className="fa fa-lock ms-4 me-4"
-                aria-hidden="true"
-                style={{ fontSize: "30px", marginRight: "20px" }}
-              ></i>
+              <div className="" style={{ cursor: "pointer" }} onClick={() => {setLogin(!login)}}>
+                <i
+                  className="fa fa-lock ms-4 me-4"
+                  aria-hidden="true"
+                  style={{ fontSize: "30px", marginRight: "20px" }}
+                ></i>
+              </div>
+              {login === true ? (<Login setLogin={setLogin}/> ) : null}
               <i
                 className="fa fa-shopping-cart ms-4 me-4"
                 aria-hidden="true"
@@ -117,11 +120,11 @@ export default function Navbar() {
                 </div>
               </span>
             </li>
-            <li className="nav-item m-0 visit" style={{ padding:"21px 0px" }}>
-              <span className="nav-link text-dark text-wrap m-0 p-0 " >
+            <li className="nav-item m-0 visit" style={{ padding: "21px 0px" }}>
+              <span className="nav-link text-dark text-wrap m-0 p-0 ">
                 Visiting Cards
-                <div className=''>
-                  <Visiting_hov/>
+                <div className="">
+                  <Visiting_hov />
                 </div>
               </span>
             </li>
