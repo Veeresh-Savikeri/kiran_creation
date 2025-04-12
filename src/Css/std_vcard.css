@@ -7,7 +7,7 @@
   
   .marquee {
     display: flex;
-    animation: marquee 10s linear infinite;
+   
   }
   
   @keyframes marquee {
@@ -24,3 +24,42 @@
   .card {
     flex: 0 0 auto;
   }
+
+.scroll-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.scroll-left,
+.scroll-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.scroll-left {
+  left: 10px; /* Place the left button at the start */
+}
+
+.scroll-right {
+  right: 10px; /* Place the right button at the end */
+}
+
+.scroll-container > * {
+  display: inline-block;
+  margin-right: 10px;
+}
