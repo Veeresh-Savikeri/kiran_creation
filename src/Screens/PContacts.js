@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 
-export default function P_contacts() {
+export default function PContacts() {
   const [cont_det, setCont_det] = useState([]);
   const [approve, setApprove] = useState(true);
 

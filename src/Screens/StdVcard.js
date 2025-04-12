@@ -5,7 +5,7 @@ import pto from "../imgs/visitingCard.webp";
 import Rel_card from "../Components/Rel_card";
 import "../Css/std_vcard.css";
 
-export default function Std_vcard() {
+export default function StdVcard() {
   return (
     <div>
       <Navbar />

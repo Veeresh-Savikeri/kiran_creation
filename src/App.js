@@ -2,8 +2,8 @@ import React from 'react';
 import Home from './Screens/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './Screens/Contact';
-import P_contacts from './Screens/P_contacts';
-import Std_vcard from './Screens/Std_vcard';
+import P_contacts from './Screens/PContacts';
+import Std_vcard from './Screens/StdVcard';
 import Private from './Screens/Private';
 import Auth from './Components/Auth';
 
