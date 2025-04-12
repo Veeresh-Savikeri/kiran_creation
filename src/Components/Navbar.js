@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "../imgs/kiran.jpg";
 import "../Css/navbar.css";
 import Menu from "./Menu";
-import Menu_hov_list from "./Menu_hov_list";
+import Menu_hov_list from "../nav_hovList/Menu_hov_list";
 import Visiting_hov from "../nav_hovList/Visiting_hov";
 
 import { useNavigate } from "react-router-dom";
@@ -131,7 +131,7 @@ export default function Navbar() {
             <li className="nav-item m-0 p-0">
               <span
                 className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
+                style={{ maxWidth: "150px" }}
               >
                 Stationery, Letterheads & Notebooks
               </span>
@@ -139,23 +139,7 @@ export default function Navbar() {
             <li className="nav-item m-0 p-0">
               <span
                 className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
-              >
-                Personalised Pens
-              </span>
-            </li>
-            <li className="nav-item m-0 p-0">
-              <span
-                className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
-              >
-                Stamps and Ink
-              </span>
-            </li>
-            <li className="nav-item m-0 p-0">
-              <span
-                className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
+                style={{ maxWidth: "150px" }}
               >
                 Signs, Posters & Marketing Materials
               </span>
@@ -163,7 +147,7 @@ export default function Navbar() {
             <li className="nav-item m-0 p-0">
               <span
                 className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
+                style={{ maxWidth: "150px" }}
               >
                 Labels, Stickers & Packaging
               </span>
@@ -171,7 +155,7 @@ export default function Navbar() {
             <li className="nav-item m-0 p-0">
               <span
                 className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
+                style={{ maxWidth: "150px" }}
               >
                 Clothing, Caps & Bags
               </span>
@@ -179,7 +163,7 @@ export default function Navbar() {
             <li className="nav-item m-0 p-0">
               <span
                 className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
+                style={{ maxWidth: "150px" }}
               >
                 Mugs, Albums & Gifts
               </span>
@@ -187,25 +171,9 @@ export default function Navbar() {
             <li className="nav-item m-0 p-0">
               <span
                 className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
+                style={{ maxWidth: "150px" }}
               >
                 Bulk Orders
-              </span>
-            </li>
-            <li className="nav-item m-0 p-0">
-              <span
-                className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
-              >
-                Custom Drinkware
-              </span>
-            </li>
-            <li className="nav-item m-0 p-0">
-              <span
-                className="nav-link text-dark text-wrap m-0 p-0"
-                style={{ maxWidth: "100px" }}
-              >
-                Custom Polo T-shirts
               </span>
             </li>
           </ul>

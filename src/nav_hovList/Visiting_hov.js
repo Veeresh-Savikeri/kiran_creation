@@ -20,7 +20,7 @@ export default function Visiting_hov() {
           <div>
             <ul>
               <li>
-                <span className="">Visiting cards</span>
+                <span className="fs-4">Visiting cards</span>
               </li>
               <li>
                 <Link
@@ -35,6 +35,22 @@ export default function Visiting_hov() {
                   to="/visiting_card "
                   className="text-dark text-decoration-none"
                 >
+                 Classic Visiting Card
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/visiting_card "
+                  className="text-dark text-decoration-none"
+                >
+                  Square Visiting Card
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/visiting_card "
+                  className="text-dark text-decoration-none"
+                >
                   Visiting Card
                 </Link>
               </li>
@@ -44,6 +60,45 @@ export default function Visiting_hov() {
                   className="text-dark text-decoration-none"
                 >
                   Visiting Card
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/visiting_card "
+                  className="text-dark text-decoration-none"
+                >
+                  Visiting Card
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <span className="fs-4">Standard Papers</span>
+              </li>
+              <li>
+                <Link
+                  to="/visiting_card "
+                  className="text-dark text-decoration-none"
+                >
+                 Glossy Visiting Card
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/visiting_card "
+                  className="text-dark text-decoration-none"
+                >
+                  Matte Visiting Card 
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/visiting_card "
+                  className="text-dark text-decoration-none"
+                >
+                 Bulk Visiting Card
                 </Link>
               </li>
               <li>
@@ -182,171 +237,7 @@ export default function Visiting_hov() {
               </li>
             </ul>
           </div>
-          <div>
-            <ul>
-              <li>
-                <span className="">Business Essentials</span>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li>
-                <span className="">Business Essentials</span>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li>
-                <span className="">Business Essentials</span>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/visiting_card "
-                  className="text-dark text-decoration-none"
-                >
-                  Visiting Card
-                </Link>
-              </li>
-            </ul>
-          </div>
+          
         </div>
       </div>
     </div>
