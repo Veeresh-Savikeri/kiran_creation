@@ -20,7 +20,7 @@ export default function Login(props) {
         <form>
           <h2 className="text-end text-white pe-3">
             <i
-              class="fa fa-times"
+              className="fa fa-times"
               aria-hidden="true"
               onClick={() => {
                 props.setLogin(false);

@@ -4,6 +4,7 @@ import Carousel from "../Components/Carousel";
 import Rel_card from "../Components/Rel_card";
 import stdVCard from "../imgs/stdVCard.png";
 import clsVCard from "../imgs/clsVCard.webp";
+import squVCard from '../imgs/squVCard.webp'
 import '../Css/home.css'
 
 
@@ -32,9 +33,9 @@ export default function Home() {
           </button>
 
           <div className="scroll-container d-flex align-items-center">
-            <Rel_card pto={stdVCard}/>
-            <Rel_card  pto={clsVCard}/>
-            <Rel_card />
+            <Rel_card pto={stdVCard} title="Standard Visiting Card"/>
+            <Rel_card  pto={clsVCard} title="Classic Visiting Card"/>
+            <Rel_card pto={squVCard}  title="Squere Visiting Card"/>
             <Rel_card />
             <Rel_card />
             <Rel_card />

@@ -1,6 +1,8 @@
 .cardImg{
     border-radius: 10px;
      height: 200px;
+    width: 98%;
+    margin: auto;
 }
 .cardBox{
     width: 18rem;
