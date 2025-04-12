@@ -5,8 +5,8 @@ export default function Rel_card() {
   return (
     <div className='marquee'>
       <div
-          className="card m-2 shadow-lg card"
-          style={{ width: "18rem", borderRadius: "10px" }}
+          className="card m-5  shadow-lg card"
+          style={{ width: "18rem", borderRadius: "10px",cursor:"pointer"}}
         >
           <img
             src={kiran}
@@ -17,9 +17,7 @@ export default function Rel_card() {
           <div className="card-body">
             <h5 className="card-title fw-bold">Card title</h5>
             <p className="card-text">100 Starting at rs-250</p>
-            <a href="#" className="btn btn-primary">
-              Details
-            </a>
+            
           </div>
         </div>
         

@@ -37,3 +37,12 @@ text-decoration: none;
   display: block;
 
 }
+/* visiting  */
+
+.visiting{
+  display: none;
+}
+
+.visit:hover .visiting{
+  display: block;
+}

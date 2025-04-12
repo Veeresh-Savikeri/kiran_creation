@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../Components/Navbar";
 
 export default function P_contacts() {
   const [cont_det, setCont_det] = useState([]);
@@ -40,10 +40,10 @@ export default function P_contacts() {
             cont_det.slice().reverse().map((contact, index) => (
               <div key={index} className="card mb-3">
                 <div className="card-body bg-light text-dark border border-dark border-2">
-                  <h5 className="card-title fw-bold">{contact.name}</h5>
-                  <p className="card-text">Phone: {contact.phone}</p>
-                  <p className="card-text">Address: {contact.address}</p>
-                  <p className="card-text">Message: {contact.message}</p>
+                  <h5 className="card-title fw-bold fs-3">{contact.name.toUpperCase()}</h5>
+                  <p className="card-text fw-bold">Phone:{contact.phone}</p>
+                  <p className="card-text fw-bold">Address: {contact.address}</p>
+                  <p className="card-text fw-bold">Message: {contact.message}</p>
                   {contact.approve == false ? (
                     <button
                       className="btn btn-primary me-2"

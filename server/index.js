@@ -15,9 +15,23 @@ app.get('/',(req,res)=>{
 // POST route to add contact info
 app.post('/contact', async (req, res) => {
     try {
-        const contact = new Contact(req.body); // Create a new document
-        const result = await contact.save(); // Save it to the database
-        res.status(201).send({ message: 'Contact added successfully', data: result });
+        let flag = false;
+        const db_cont = await Contact.find();
+        for(let i=0;i<db_cont.length;i++){
+            if(db_cont[i].message == req.body.message){
+                flag = false;
+                res.status(400).send({ message: 'Contact already exists' });
+                return;
+            }
+            flag = true;
+        }
+        if(flag == true){
+            const contact = new Contact(req.body); // Create a new document
+            const result = await contact.save();
+            res.status(201).send({ message: 'Contact added successfully', data: result });
+        }
+        // Save it to the database
+       
     } catch (error) {
         res.status(500).send({ message: 'Error adding contact', error: error.message });
     }

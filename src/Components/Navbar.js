@@ -3,9 +3,12 @@ import logo from "../imgs/kiran.jpg";
 import "../Css/navbar.css";
 import Menu from "./Menu";
 import Menu_hov_list from "./Menu_hov_list";
+import Visiting_hov from "../nav_hovList/Visiting_hov";
+
+
+
+
 import { useNavigate } from "react-router-dom";
-
-
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -27,7 +30,11 @@ export default function Navbar() {
         <nav className="navbar bg-body-tertiary pt-8">
           <div className="d-flex align-items-center justify-content-between flex-wrap w-100">
             {/* Logo and Title */}
-            <div className="d-flex align-items-center mb-2">
+            <div
+              className="d-flex align-items-center mb-2"
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/")}
+            >
               <img
                 src={logo}
                 alt="Logo"
@@ -66,7 +73,11 @@ export default function Navbar() {
               <i
                 className="fa fa-phone ms-4 me-4"
                 aria-hidden="true"
-                style={{ fontSize: "30px", marginRight: "20px",cursor:'pointer'}}
+                style={{
+                  fontSize: "30px",
+                  marginRight: "20px",
+                  cursor: "pointer",
+                }}
                 onClick={() => {
                   navigate("/contact");
                 }}
@@ -92,29 +103,26 @@ export default function Navbar() {
         </nav>
         {menu === true ? <Menu /> : null}
 
-
         {/* Secondary Navbar with List Items */}
         <nav
           className="navbar bg-light shadow-bottom m-0 pb-10 res_list"
           style={{ boxShadow: "4px 4px 6px rgba(0,0,0,0.5)" }}
         >
           <ul className="nav justify-content-around w-100 m-0 p-0 align-items-center">
-            <li className="view nav-item m-0 " style={{ padding: "21px 0px" }}>
-              <span
-                className="nav-link text-dark text-wrap m-0 p-0"                
-              >
+            <li className="view nav-item m-0" style={{ padding: "21px 0px" }}>
+              <span className="nav-link text-dark text-wrap m-0 p-0">
                 View All
                 <div className="view">
-                  <Menu_hov_list/>
+                  <Menu_hov_list />
                 </div>
               </span>
             </li>
-            <li className="nav-item m-0 p-0">
-              <span
-                className="nav-link text-dark text-wrap m-0 p-0"
-               
-              >
+            <li className="nav-item m-0 visit" style={{ padding:"21px 0px" }}>
+              <span className="nav-link text-dark text-wrap m-0 p-0 " >
                 Visiting Cards
+                <div className=''>
+                  <Visiting_hov/>
+                </div>
               </span>
             </li>
             <li className="nav-item m-0 p-0">
@@ -199,7 +207,23 @@ export default function Navbar() {
             </li>
           </ul>
         </nav>
-       
+      </div>
+      <div
+        style={{ height: "40px", width: "100%", backgroundColor: "black" }}
+        className="d-flex justify-content-around align-items-center"
+      >
+        <span className="text-white fs-4">
+          <i className="fab fa-instagram " aria-hidden="true">
+            {" "}
+            KIRAN CREATIONZ
+          </i>
+        </span>
+        <span className="text-white fs-4">
+          <i className="fab fa-whatsapp" aria-hidden="true">
+            {" "}
+            9739263962
+          </i>
+        </span>
       </div>
     </div>
   );

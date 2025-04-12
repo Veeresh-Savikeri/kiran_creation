@@ -3,31 +3,14 @@ import Navbar from "../Components/Navbar";
 import kiran from "../imgs/kiran.jpg";
 import pto from "../imgs/visitingCard.webp";
 import Rel_card from "../Components/Rel_card";
-import '../Css/std_vcard.css';
-
+import "../Css/std_vcard.css";
 
 export default function Std_vcard() {
   return (
     <div>
       <Navbar />
-      <div
-        style={{ height: "40px", width: "100%", backgroundColor: "black" }}
-        className="d-flex justify-content-around align-items-center"
-      >
-        <span className="text-white fs-4">
-          <i className="fab fa-instagram " aria-hidden="true">
-            {" "}
-            KIRAN CREATIONZ
-          </i>
-        </span>
-        <span className="text-white fs-4">
-          <i className="fab fa-whatsapp" aria-hidden="true">
-            {" "}
-            9739263962
-          </i>
-        </span>
-      </div>
-      <div className="bg-light" style={{ minHeight: "100vh" }}>
+      
+      <div className="bg-light " style={{ minHeight: "100vh" }}>
         <div className="d-flex flex-wrap justify-content-between align-items-start container shadow-lg mt-5">
           {/* Left Box */}
           <div
@@ -164,7 +147,7 @@ export default function Std_vcard() {
               minWidth: "300px",
             }}
           >
-            <h2 className="text-center fw-bold">Standard Visition card</h2>
+            <h2 className="text-center fw-bold">Standard Visition Card</h2>
             <ul>
               <li>cdc</li>
               <li>cdc</li>
@@ -229,15 +212,15 @@ export default function Std_vcard() {
         </div>
       </div>
       <h1 className="text-center mt-5 fw-bold">Related Products</h1>
-      <div className="cards d-flex justify-content-center align-items-center mt-5 marquee-container">
-      <Rel_card/>
-      <Rel_card/>
-      <Rel_card/>
-      <Rel_card/>
-      <Rel_card/>
-      <Rel_card/>
-      <Rel_card/>
-      <Rel_card/>
+      <div className="cards d-flex justify-content-center align-items-center marquee-container">
+        <Rel_card />
+        <Rel_card />
+        <Rel_card />
+        <Rel_card />
+        <Rel_card />
+        <Rel_card />
+        <Rel_card />
+        <Rel_card />
       </div>
     </div>
   );

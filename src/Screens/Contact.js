@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "../Components/Navbar";
 import "../Css/menu.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -14,24 +14,6 @@ export default function Contact() {
   return (
     <div>
       <Navbar />
-      <div
-        style={{ height: "40px", width: "100%", backgroundColor: "black" }}
-        className="d-flex justify-content-around align-items-center"
-      >
-        <span className="text-white fs-4">
-          <i className="fab fa-instagram " aria-hidden="true">
-            {" "}
-            KIRAN CREATIONZ
-          </i>
-        </span>
-        <span className="text-white fs-4">
-          <i className="fab fa-whatsapp" aria-hidden="true">
-            {" "}
-            9739263962
-          </i>
-        </span>
-      </div>
-
       <div
         className="bg-dark text-white d-flex flex-wrap justify-content-between align-items-center"
         style={{
@@ -99,7 +81,7 @@ export default function Contact() {
                 })
                   .then((res) => res.json())
                   .then((data) => {
-                    alert("Submitted Successfully");
+                    alert(data.message);
                     navigate("/");
                   });
               }}

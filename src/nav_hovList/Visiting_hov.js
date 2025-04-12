@@ -1,14 +1,12 @@
 import React from "react";
-import "../Css/navbar.css";
 import { Link } from "react-router-dom";
-
-
-export default function Menu_hov_list() {
+import "../Css/navbar.css";
+export default function Visiting_hov() {
   return (
-    <>
-      <div className="view_all">
+    <div>
+      <div className="visiting">
         <div
-          className="w-100 d-flex justify-content-around align-items-center hov_list "
+          className="w-100 d-flex justify-content-around align-items-center hov_list"
           style={{
             zIndex: 1,
             position: "absolute",
@@ -22,14 +20,14 @@ export default function Menu_hov_list() {
           <div>
             <ul>
               <li>
-                <span className="">Business Essentials</span>
+                <span className="">Visiting cards</span>
               </li>
               <li>
                 <Link
-                  to="/visiting_card "
+                  to="/std_vcard "
                   className="text-dark text-decoration-none"
                 >
-                  Visiting Card
+                 Standard Visiting Card
                 </Link>
               </li>
               <li>
@@ -351,6 +349,6 @@ export default function Menu_hov_list() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
