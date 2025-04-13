@@ -32,7 +32,7 @@ export default function Visiting_hov() {
               </li>
               <li>
                 <Link
-                  to="/visiting_card "
+                  to="/clsvcard "
                   className="text-dark text-decoration-none"
                 >
                  Classic Visiting Card

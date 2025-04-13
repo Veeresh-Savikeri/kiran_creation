@@ -6,17 +6,17 @@ import P_contacts from './Screens/PContacts';
 import Std_vcard from './Screens/StdVcard';
 import Private from './Screens/Private';
 import Auth from './Components/Auth';
+import ClsVCard from './Screens/ClsVCard';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          
-          <Route path="/contact" element={<Contact />} />
-         
+          <Route path="/" element={<Home />} />          
+          <Route path="/contact" element={<Contact />} />         
           <Route path="/std_vcard" element={<Std_vcard />} />
+          <Route path="/clsvcard" element={<ClsVCard />} />
           <Route element={<Auth />} >
           <Route path="/private" element={<Private />} />
           <Route path="/private/p_contacts" element={<P_contacts />} />

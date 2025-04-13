@@ -16,11 +16,12 @@
   
 }
 
-.menu ul li a{
+.menu ul li{
     padding: 10px 20px;
     color: #fff;
     text-decoration: none;
     font-size: 18px;
+    cursor: pointer;
     
 }
 

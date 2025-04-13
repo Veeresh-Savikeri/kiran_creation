@@ -6,37 +6,25 @@ export default function Menu() {
       <div className="menu">
         <ul>
           <li>
-            <a href="#">View All</a>
+            View All
           </li>
           <li>
-            <a href="#">Visiting Cards</a>
+            Visiting Cards
           </li>
           <li>
-            <a href="#">Stationery, Letterheads & Notebooks</a>
+            Stationery, Letterheads & Notebooks
           </li>
           <li>
-            <a href="#">Personalised Pens</a>
+            Labels, Stickers & Packaging
           </li>
           <li>
-            <a href="#">Signs, Posters & Marketing Materials</a>
+            Clothing, Caps & Bags
           </li>
           <li>
-            <a href="#">Labels, Stickers & Packaging</a>
+            Mugs, Albums & Gifts
           </li>
           <li>
-            <a href="#">Clothing, Caps & Bags</a>
-          </li>
-          <li>
-            <a href="#">Mugs, Albums & Gifts</a>
-          </li>
-          <li>
-            <a href="#">Bulk Orders</a>
-          </li>
-          <li>
-            <a href="#">Custom Drinkware</a>
-          </li>
-          <li>
-            <a href="#">Custom Polo T-shirts</a>
+            Bulk Orders
           </li>
         </ul>
       </div>

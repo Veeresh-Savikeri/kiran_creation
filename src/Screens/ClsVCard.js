@@ -1,21 +1,21 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-import stdVCard from "../imgs/stdVCard.png";
+import stdVCard from "../imgs/clsVCard.webp";
 import pto from "../imgs/visitingCard.webp";
 import Rel_card from "../Components/Rel_card";
 import "../Css/std_vcard.css";
 
-export default function StdVcard() {
-  function scrollLeft() {
-    const container = document.querySelector(".scroll-container");
-    container.scrollBy({ left: -700, behavior: "smooth" });
-  }
-
-  function scrollRight() {
-    const container = document.querySelector(".scroll-container");
-    container.scrollBy({ left: 700, behavior: "smooth" });
-  }
-
+export default function ClsVCard() {
+    function scrollLeft() {
+        const container = document.querySelector(".scroll-container");
+        container.scrollBy({ left: -700, behavior: "smooth" });
+      }
+    
+      function scrollRight() {
+        const container = document.querySelector(".scroll-container");
+        container.scrollBy({ left: 700, behavior: "smooth" });
+      }
+    
   return (
     <div>
       <Navbar />
@@ -249,5 +249,5 @@ export default function StdVcard() {
         </div>
       </div>
     </div>
-  );
+  )
 }
