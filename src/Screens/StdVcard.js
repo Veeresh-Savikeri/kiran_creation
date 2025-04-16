@@ -1,8 +1,10 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-import stdVCard from "../imgs/stdVCard.png";
 import pto from "../imgs/visitingCard.webp";
 import Rel_card from "../Components/Rel_card";
+import stdVCard from "../imgs/stdVCard.png";
+import clsVCard from "../imgs/clsVCard.webp";
+import squVCard from "../imgs/squVCard.webp";
 import "../Css/std_vcard.css";
 
 export default function StdVcard() {
@@ -230,13 +232,24 @@ export default function StdVcard() {
           </button>
 
           <div className="scroll-container d-flex align-items-center">
-            <Rel_card />
-            <Rel_card />
-            <Rel_card />
-            <Rel_card />
-            <Rel_card />
-            <Rel_card />
-            <Rel_card />
+            <Rel_card
+              pto={stdVCard}
+              title="Standard Visiting Card"
+              price="100 Starting at Rs-250"
+              route="/std_vcard"
+            />
+            <Rel_card
+              pto={clsVCard}
+              title="Classic Visiting Card"
+              price="100 Starting at Rs-250"
+              route="/clsvcard"
+            />
+            <Rel_card
+              pto={squVCard}
+              title="Squere Visiting Card"
+              price="100 Starting at Rs-250"
+              route="/std_vcard"
+            />
             <Rel_card />
           </div>
 

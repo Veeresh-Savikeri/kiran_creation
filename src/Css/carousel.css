@@ -15,7 +15,7 @@
 .carContainer{
     flex-direction: row;
 }
-@media (max-width: 768px) {
+@media (max-width: 1071px) {
     .carContainer{
        
         flex-direction: column;
@@ -25,6 +25,24 @@
         margin-bottom: 1rem;
     }
     .shop{
+        display: none;
+    }
+}
+.mobShop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(365, 365, 365, 0.9); /* Semi-transparent background */
+    color: #ffffff;
+    border-radius: 20px;
+    position: absolute; /* Position it absolutely within the image container */
+    top: 65%;
+    left: 32%;
+}
+@media (min-width: 1071px) {
+  
+    .mobShop{
         display: none;
     }
 }

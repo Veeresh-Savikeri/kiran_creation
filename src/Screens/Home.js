@@ -33,14 +33,26 @@ export default function Home() {
           </button>
 
           <div className="scroll-container d-flex align-items-center">
-            <Rel_card pto={stdVCard} title="Standard Visiting Card"/>
-            <Rel_card  pto={clsVCard} title="Classic Visiting Card"/>
-            <Rel_card pto={squVCard}  title="Squere Visiting Card"/>
+          <Rel_card
+              pto={stdVCard}
+              title="Standard Visiting Card"
+              price="100 Starting at Rs-250"
+              route="/std_vcard"
+            />
+            <Rel_card
+              pto={clsVCard}
+              title="Classic Visiting Card"
+              price="100 Starting at Rs-250"
+              route="/clsvcard"
+            />
+            <Rel_card
+              pto={squVCard}
+              title="Squere Visiting Card"
+              price="100 Starting at Rs-250"
+              route="/std_vcard"
+            />
             <Rel_card />
-            <Rel_card />
-            <Rel_card />
-            <Rel_card />
-            <Rel_card />
+            
           </div>
 
           <button

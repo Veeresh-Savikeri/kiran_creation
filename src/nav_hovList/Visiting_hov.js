@@ -15,10 +15,12 @@ export default function Visiting_hov() {
             backgroundColor: "#fff",
             padding: "20px 0px",
             borderRadius: "10px",
+            borderTop: "2px solid black",
+            borderBottom: "2px solid black",
           }}
         >
           <div>
-            <ul>
+            <ul className="text-start">
               <li>
                 <span className="fs-4">Visiting cards</span>
               </li>

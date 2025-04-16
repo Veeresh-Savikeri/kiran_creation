@@ -17,6 +17,8 @@ export default function Menu_hov_list() {
             backgroundColor: "#fff",
             padding: "20px 0px",
             borderRadius: "10px",
+            borderTop: "2px solid black",
+            borderBottom: "2px solid black",
           }}
         >
           <div>

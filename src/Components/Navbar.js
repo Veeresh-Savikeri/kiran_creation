@@ -93,9 +93,11 @@ export default function Navbar() {
               <i
                 className="fa fa-shopping-cart ms-4 me-4"
                 aria-hidden="true"
-                style={{ fontSize: "30px", marginRight: "20px" }}
+                style={{ fontSize: "30px", marginRight: "20px" ,cursor: "pointer"}}
+                onClick={() => {
+                  navigate("/cart");
+                }}
               ></i>
-
               <i
                 className="fa fa-heart ms-4 me-4"
                 aria-hidden="true"

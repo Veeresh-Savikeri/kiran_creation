@@ -12,28 +12,28 @@ export default function Private() {
       <div
         className="container card"
         style={{
-          backgroundImage: `url(${kiran})`,
+          backgroundColor:"white",
           backgroundSize: "cover",
           minHeight: "70vh",
         }}
       >
-        <div className="cards mt-5 btn bg-warning border border-success border-2 shadow text-decoration-none">
+        <div className="cards mt-5 btn  btn-dark border-success border-2 shadow text-decoration-none">
           <Link to="/private/p_contacts"  style={{ textDecoration: "none" }}>
-            <h2 className="text-center fw-bold text-dark">
+            <h2 className="text-center fw-bold text-white">
               Contacted Persons
             </h2>
           </Link>
         </div>
-        <div className="cards mt-5 btn bg-warning text-dark border border-success border-2 shadow">
+        <div className="cards mt-5 btn btn-dark border border-success border-2 shadow">
+          <h2 className="text-center fw-bold">Ordered Notification</h2>
+        </div>
+        <div className="cards mt-5 btn  btn-dark border border-success border-2 shadow">
           <h2 className="text-center fw-bold">Contact Notification</h2>
         </div>
-        <div className="cards mt-5 btn bg-warning text-dark border border-success border-2 shadow">
+        <div className="cards mt-5 btn  btn-dark border border-success border-2 shadow">
           <h2 className="text-center fw-bold">Contact Notification</h2>
         </div>
-        <div className="cards mt-5 btn bg-warning text-dark border border-success border-2 shadow">
-          <h2 className="text-center fw-bold">Contact Notification</h2>
-        </div>
-        <div className="cards mt-5 btn bg-warning text-dark border border-success border-2 shadow">
+        <div className="cards mt-5 btn  btn-dark border border-success border-2 shadow">
           <h2 className="text-center fw-bold">Contact Notification</h2>
         </div>
       </div>

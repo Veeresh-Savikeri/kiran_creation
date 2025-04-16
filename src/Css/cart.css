@@ -1,0 +1,29 @@
+.cart{
+    flex-direction: row;
+}
+.cartImg{
+    width: 100px;
+    height: 100px;
+}
+.cartName{
+    font-size: 25px;
+}
+.cartPrice{
+    font-size: 17px;
+}
+@media (max-width: 600px) {
+    .cart{
+        flex-direction: column;
+        width:60vw;
+    }
+    .cartImg{
+        width: 55vw;
+        height: 40vw;
+    }
+    .cartName{
+        font-size: 15px;
+    }
+    .cartPrice{
+        font-size: 13px;
+    }
+}

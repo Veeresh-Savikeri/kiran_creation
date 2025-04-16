@@ -6,13 +6,21 @@ import "../Css/home.css";
 
 export default function Rel_card(props) {
   const [cart, setCart] = useState("fa fa-shopping-cart fs-4");
+
   return (
     <div className="marquee ">
       <div className="card m-4 shadow-lg cardBox">
         <span
           className="position-absolute end-0 m-3"
           style={{ color: "white", textShadow: "2px 2px 2px black" }}
-          onClick={()=>setCart("fa fa-check-square fs-4")}
+          onClick={() => {
+            setCart("fa fa-check-square fs-4");
+            // Convert the object to a JSON string before storing it
+            localStorage.setItem(
+              `cart_${props.title}`,
+              JSON.stringify({ pto: props.pto, title: props.title, price: props.price, route: props.route })
+            );
+          }}
         >
           <i className={cart} aria-hidden="true"></i>
         </span>
@@ -21,7 +29,7 @@ export default function Rel_card(props) {
           <h5 className="fs-5 fw-bold " style={{ textWrap: "auto" }}>
             {props.title}
           </h5>
-          <p className="fs-9">100 Starting at Rs-250</p>
+          <p className="fs-9">{props.price}</p>
         </div>
       </div>
     </div>

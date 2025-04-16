@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "../Css/login.css";
 export default function Login(props) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -10,7 +10,7 @@ export default function Login(props) {
   return (
     <div>
       <div
-        className="position-fixed top-50 start-50 p-3 rounded-3 w-50 border border-2 border-light"
+        className="position-fixed top-50 start-50 p-3 rounded-3 border border-2 border-light shadow-lg login"
         style={{
           zIndex: 1,
           backgroundColor: "rgba(0,0,0, 0.8)", // Transparent white background
@@ -72,6 +72,7 @@ export default function Login(props) {
             onClick={() => {
               if (name === "admin" && password === "admin") {
                 navigate("/private");
+               
               } else {
                 alert("Invalid credentials");
                 props.setLogin(false);

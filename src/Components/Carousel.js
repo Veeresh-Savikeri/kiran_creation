@@ -12,12 +12,29 @@ export default function Carousel() {
                 <div className="shop position-absolute translate-middle p-5 text-dark">
                     <h1 className="fw-bold fs-1">Visiting Cards</h1>
                     <p className="fs-6">100 Visiting Cards at Rs 200</p>
-                    <button className="btn btn-dark p-2 fs-5 fw-bold" onClick={()=>navigate("/std_vcard")}>Shop Now</button>
+                    <button className="btn btn-dark p-2 fs-5 fw-bold" onClick={() => navigate("/std_vcard")}>Shop Now</button>
+                </div>
+                <div className="mobShop position-absolute translate-middle p-4 text-dark">
+                    <h1 className="fw-bold fs-1">Visiting Cards</h1>
+                    <p className="fs-6">100 Visiting Cards at Rs 200</p>
+                    <button className="btn btn-dark p-2 fs-5 fw-bold" onClick={() => navigate("/std_vcard")}>Shop Now</button>
                 </div>
             </div>
-            <div className="c1">
+            <div className="c1 position-relative">
                 <img className="w-100 h-100" src={pto2} alt="" />
+                <div className="shop position-absolute translate-middle p-5 text-dark">
+                    <h1 className="fw-bold fs-1">Visiting Cards</h1>
+                    <p className="fs-6">100 Visiting Cards at Rs 200</p>
+                    <button className="btn btn-dark p-2 fs-5 fw-bold" onClick={() => navigate("/std_vcard")}>Shop Now</button>
+                </div>
+                <div className="mobShop position-absolute translate-middle p-4 text-dark">
+                    <h1 className="fw-bold fs-1">Visiting Cards</h1>
+                    <p className="fs-6">100 Visiting Cards at Rs 200</p>
+                    <button className="btn btn-dark p-2 fs-5 fw-bold" onClick={() => navigate("/std_vcard")}>Shop Now</button>
+                </div>
             </div>
+
+            
         </div>
     );
 }
