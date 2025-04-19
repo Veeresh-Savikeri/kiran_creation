@@ -4,9 +4,9 @@ import Carousel from "../Components/Carousel";
 import Rel_card from "../Components/Rel_card";
 import stdVCard from "../imgs/stdVCard.png";
 import clsVCard from "../imgs/clsVCard.webp";
-import squVCard from '../imgs/squVCard.webp'
-import '../Css/home.css'
-
+import squVCard from "../imgs/squVCard.webp";
+import "../Css/home.css";
+import Footer from "../Components/Footer";
 
 export default function Home() {
   function scrollLeft() {
@@ -18,8 +18,6 @@ export default function Home() {
     const container = document.querySelector(".scroll-container");
     container.scrollBy({ left: 300, behavior: "smooth" });
   }
-
-
 
   return (
     <div>
@@ -33,7 +31,7 @@ export default function Home() {
           </button>
 
           <div className="scroll-container d-flex align-items-center">
-          <Rel_card
+            <Rel_card
               pto={stdVCard}
               title="Standard Visiting Card"
               price="100 Starting at Rs-250"
@@ -52,7 +50,6 @@ export default function Home() {
               route="/std_vcard"
             />
             <Rel_card />
-            
           </div>
 
           <button
@@ -62,7 +59,8 @@ export default function Home() {
             <i className="fa fa-chevron-right" aria-hidden="true"></i>
           </button>
         </div>
-        </div>
+      </div>
+      <Footer/>
     </div>
   );
 }

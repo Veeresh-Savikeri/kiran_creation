@@ -8,6 +8,8 @@ import Private from './Screens/Private';
 import Auth from './Components/Auth';
 import ClsVCard from './Screens/ClsVCard';
 import Cart from './Screens/Cart';
+import Order from './Screens/Order';
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
           <Route path="/private" element={<Private />} />
           <Route path="/private/p_contacts" element={<P_contacts />} />
           </Route>
+          <Route path="/order" element={<Order />} /> 
         </Routes>
       </Router>
 

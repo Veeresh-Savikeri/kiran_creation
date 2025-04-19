@@ -4,7 +4,7 @@ const app = express();
 const PORT = 5000;
 const Contact = require('./db/Contact'); // Import the Contact model
 const cors = require('cors');
-
+const Order = require('./db/Order'); // Import the Order model
 app.use(cors())
 
 
@@ -55,6 +55,24 @@ app.post('/cont_upd', async (req, res) => {
     }
 });
 
+app.post('/order', async (req, res) => {
+    try {
+        const order = new Order(req.body);
+        const result = await order.save();
+        res.status(201).send({ message: 'Order placed successfully' });
+    } catch (error) {
+        res.status(500).send({ message: 'Error placing order', error: error.message });
+    }
+});
+
+app.put('/order', async (req, res) => {
+    try {
+        const order = await Order.updateOne({ name: req.body.name }, { $set: { "payment": true } }); // Update a document
+        res.status(200).send({ message: 'Order updated successfully', data: order });
+    } catch (error) {
+        res.status(500).send({ message: 'Error updating order', error: error.message });
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

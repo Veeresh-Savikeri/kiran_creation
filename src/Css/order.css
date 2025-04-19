@@ -1,0 +1,40 @@
+.orderCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.orderCardText{
+    margin: auto;
+}
+@media (max-width: 768px) {
+    .orderCard {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .orderCard img {
+       width: 130px;
+       height: 130px;
+       margin: 0px;
+       padding: 0px;
+    }
+    .orderCard div {
+        font-size: 10px;
+        margin: 0px;
+        padding: 0px;
+    }
+    .subOrderCard div {
+       
+        margin: 0px;
+        padding: 0px;
+    }
+    .subOrderCard div h2 {
+        font-size: 20px;
+       
+    }
+    .subOrderCard div h4{
+        font-size: 15px;
+    }
+    
+}

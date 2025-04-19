@@ -1,13 +1,32 @@
 import React from "react";
+import { useState } from "react";
 import Navbar from "../Components/Navbar";
-import pto from "../imgs/visitingCard.webp";
 import Rel_card from "../Components/Rel_card";
 import stdVCard from "../imgs/stdVCard.png";
 import clsVCard from "../imgs/clsVCard.webp";
 import squVCard from "../imgs/squVCard.webp";
+import svc1 from "../imgs/svc.webp";
+import svc2 from "../imgs/svc2.jpg";
+import svc3 from "../imgs/svc3.jpg";
+import svc4 from "../imgs/svc4.jpg";
+import svc5 from "../imgs/svc5.jpg";
+import svc6 from "../imgs/svc6.avif";
+import whatsapp from "../imgs/whatsapp.jpg";
 import "../Css/std_vcard.css";
+import { Link, useNavigate } from "react-router-dom";
+import Footer from "../Components/Footer";
 
 export default function StdVcard() {
+  const [selectedImage, setSelectedImage] = useState(stdVCard);
+  const [border, setBorder] = useState("none");
+  const [selQuant, setSelQuant] = useState(100);
+  const [sides, setSides] = useState("One Side");
+  const [corners, setCorners] = useState("sharp");
+  const [price, setPrice] = useState(250);
+  const [pto, setPto] = useState(selectedImage);
+  const navigate = useNavigate();
+
+
   function scrollLeft() {
     const container = document.querySelector(".scroll-container");
     container.scrollBy({ left: -700, behavior: "smooth" });
@@ -18,10 +37,18 @@ export default function StdVcard() {
     container.scrollBy({ left: 700, behavior: "smooth" });
   }
 
+  let orders = {
+    name: "Standard Visiting Card",
+    sides: sides,
+    price: price,
+    quantity: selQuant,
+    sides: sides,
+    corners: corners,
+    image: selectedImage,
+  }
   return (
     <div>
       <Navbar />
-
       <div className="bg-light " style={{ minHeight: "100vh" }}>
         <div className="d-flex flex-wrap justify-content-between align-items-start container shadow-lg mt-5">
           {/* Left Box */}
@@ -36,15 +63,115 @@ export default function StdVcard() {
             }}
           >
             <img
-              src={stdVCard}
+              src={selectedImage}
               alt="Placeholder"
               className="img-fluid rounded border border-dark border-5"
               style={{ borderRadius: "10px", width: "100%", height: "50vh" }}
             />
             <div className="mt-5 row">
-              <div className="col-1 me-5 mt-3" style={{ cursor: "pointer" }}>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc1)}
+              >
                 <img
-                  src={pto}
+                  src={svc1}
+                  alt=""
+                  style={{
+                    borderRadius: "10px",
+                    width: "70px",
+                    height: "70px",
+                    border: selectedImage == svc1 ? "3px solid black" : "none",
+                  }}
+                />
+              </div>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc2)}
+              >
+                <img
+                  src={svc2}
+                  alt=""
+                  style={{
+                    borderRadius: "10px",
+                    width: "70px",
+                    height: "70px",
+                    border: selectedImage == svc2 ? "3px solid black" : "none",
+                  }}
+                />
+              </div>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc3)}
+              >
+                <img
+                  src={svc3}
+                  alt=""
+                  style={{
+                    borderRadius: "10px",
+                    width: "70px",
+                    height: "70px",
+                    border: selectedImage == svc3 ? "3px solid black" : "none",
+                  }}
+                />
+              </div>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc4)}
+              >
+                <img
+                  src={svc4}
+                  alt=""
+                  style={{
+                    borderRadius: "10px",
+                    width: "70px",
+                    height: "70px",
+                    border: selectedImage == svc4 ? "3px solid black" : "none",
+                  }}
+                />
+              </div>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc5)}
+              >
+                <img
+                  src={svc5}
+                  alt=""
+                  style={{
+                    borderRadius: "10px",
+                    width: "70px",
+                    height: "70px",
+                    border: selectedImage == svc5 ? "3px solid black" : "none",
+                  }}
+                />
+              </div>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc6)}
+              >
+                <img
+                  src={svc6}
+                  alt=""
+                  style={{
+                    borderRadius: "10px",
+                    width: "70px",
+                    height: "70px",
+                    border: selectedImage == svc6 ? "3px solid black" : "none",
+                  }}
+                />
+              </div>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc1)}
+              >
+                <img
+                  src={svc1}
                   alt=""
                   style={{
                     borderRadius: "10px",
@@ -53,9 +180,13 @@ export default function StdVcard() {
                   }}
                 />
               </div>
-              <div className="col-1 me-5 mt-3" style={{ cursor: "pointer" }}>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc2)}
+              >
                 <img
-                  src={pto}
+                  src={svc2}
                   alt=""
                   style={{
                     borderRadius: "10px",
@@ -64,9 +195,13 @@ export default function StdVcard() {
                   }}
                 />
               </div>
-              <div className="col-1 me-5 mt-3" style={{ cursor: "pointer" }}>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc3)}
+              >
                 <img
-                  src={pto}
+                  src={svc3}
                   alt=""
                   style={{
                     borderRadius: "10px",
@@ -75,9 +210,13 @@ export default function StdVcard() {
                   }}
                 />
               </div>
-              <div className="col-1 me-5 mt-3" style={{ cursor: "pointer" }}>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc4)}
+              >
                 <img
-                  src={pto}
+                  src={svc4}
                   alt=""
                   style={{
                     borderRadius: "10px",
@@ -86,9 +225,13 @@ export default function StdVcard() {
                   }}
                 />
               </div>
-              <div className="col-1 me-5 mt-3" style={{ cursor: "pointer" }}>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc5)}
+              >
                 <img
-                  src={pto}
+                  src={svc5}
                   alt=""
                   style={{
                     borderRadius: "10px",
@@ -97,42 +240,13 @@ export default function StdVcard() {
                   }}
                 />
               </div>
-              <div className="col-1 me-5 mt-3" style={{ cursor: "pointer" }}>
+              <div
+                className="col-1 me-5 mt-3"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(svc6)}
+              >
                 <img
-                  src={pto}
-                  alt=""
-                  style={{
-                    borderRadius: "10px",
-                    width: "70px",
-                    height: "70px",
-                  }}
-                />
-              </div>
-              <div className="col-1 me-5 mt-3" style={{ cursor: "pointer" }}>
-                <img
-                  src={pto}
-                  alt=""
-                  style={{
-                    borderRadius: "10px",
-                    width: "70px",
-                    height: "70px",
-                  }}
-                />
-              </div>
-              <div className="col-1 me-5 mt-3" style={{ cursor: "pointer" }}>
-                <img
-                  src={pto}
-                  alt=""
-                  style={{
-                    borderRadius: "10px",
-                    width: "70px",
-                    height: "70px",
-                  }}
-                />
-              </div>
-              <div className="col-1 me-5 mt-3" style={{ cursor: "pointer" }}>
-                <img
-                  src={pto}
+                  src={svc6}
                   alt=""
                   style={{
                     borderRadius: "10px",
@@ -142,10 +256,16 @@ export default function StdVcard() {
                 />
               </div>
             </div>
-            <button className="bg-success rounded p-3 w-100 text-light border border-light mt-3 fs-5">
-              <i className="fab fa-whatsapp fs-3 me-2" aria-hidden="true"></i>
-              Share Design On WhatsApp
-            </button>
+            <Link
+              to="https://wa.me/9739263962"
+              target="_blank"
+              onClick={() => setSelectedImage(whatsapp)}
+            >
+              <button className="bg-success rounded p-3 w-100 text-light border border-light mt-3 fs-5">
+                <i className="fab fa-whatsapp fs-3 me-2" aria-hidden="true"></i>
+                Share Design On WhatsApp
+              </button>
+            </Link>
           </div>
 
           {/* Right Box */}
@@ -167,11 +287,35 @@ export default function StdVcard() {
               <li>dc</li>
               <li>cd</li>
             </ul>
-            <h4 className="text-start fw-bold mt-3">Deliver Speed</h4>
+            <h4 className="text-start fw-bold mt-3">Sides</h4>
             <div className="row">
-              <button className="col-1 w-50 rounded fs-5 p-2">Standard</button>
-              <button className="col-2 w-50 rounded fs-5 p-2">
-                Same Day Deliver
+              <button
+                className="col-1 w-50 rounded fs-5 p-2"
+                style={{
+                  borderStyle: "solid",
+                  borderColor: "black",
+                  borderWidth: border == "left" ? "3px" : "1px",
+                }}
+                onClick={() => {
+                  setBorder("left");
+                  setSides("One Side");
+                }}
+              >
+                One Side
+              </button>
+              <button
+                className="col-2 w-50 rounded fs-5 p-2 "
+                style={{
+                  borderStyle: "solid",
+                  borderColor: "black",
+                  borderWidth: border == "right" ? "3px" : "1px",
+                }}
+                onClick={() => {
+                  setBorder("right");
+                  setSides("Two Side");
+                }}
+              >
+                Two Side
               </button>
             </div>
             <h4 className="text-start fw-bold mt-3">Corners</h4>
@@ -179,36 +323,91 @@ export default function StdVcard() {
               name=""
               id=""
               className="w-100 rounded fs-6 p-2 border border-dark rounded border-3"
+              onClick={(e) => {
+                setCorners(e.target.value);
+              }
+              }
             >
-              <option value="select">Select...</option>
-              <option value="rounded">Rounded</option>
               <option value="sharp">Sharp</option>
             </select>
             <h4 className="text-start fw-bold mt-3">Quantity</h4>
             <div className="col">
-              <div className="row-1 w-100 border border-dark rounded p-2 d-flex justify-content-between align-items-center mb-2">
+              <div
+                className="row-1 w-100 rounded p-2 d-flex justify-content-between align-items-center mb-2"
+                style={{
+                  borderColor: "black",
+                  borderStyle: "solid",
+                  borderWidth: selQuant == 100 ? "3px" : "1px",
+                }}
+                onClick={() => {
+                  setSelQuant(100);
+                  setPrice(250);
+                }}
+              >
                 <span>100</span>
-                <span>Rs-200</span>
+                <span>Rs-250</span>
+                <span>15% savings</span>
+              </div>
+              <div
+                className="row-1 w-100  rounded p-2 d-flex justify-content-between align-items-center mb-2"
+                style={{
+                  borderColor: "black",
+                  borderStyle: "solid",
+                  borderWidth: selQuant == 200 ? "3px" : "1px",
+                }}
+                onClick={() => {
+                  setSelQuant(200);
+                  setPrice(340);
+                }}
+              >
+                <span>200</span>
+                <span>Rs-340</span>
                 <span>25% sevings</span>
               </div>
-              <div className="row-1 w-100 border border-dark rounded p-2 d-flex justify-content-between align-items-center mb-2">
-                <span>100</span>
-                <span>Rs-200</span>
+              <div
+                className="row-1 w-100 rounded p-2 d-flex justify-content-between align-items-center mb-2"
+                style={{
+                  borderColor: "black",
+                  borderStyle: "solid",
+                  borderWidth: selQuant == 300 ? "3px" : "1px",
+                }}
+                onClick={() => {
+                  setSelQuant(300);
+                  setPrice(480);
+                }}
+              >
+                <span>300</span>
+                <span>Rs-480</span>
                 <span>25% sevings</span>
               </div>
-              <div className="row-1 w-100 border border-dark rounded p-2 d-flex justify-content-between align-items-center mb-2">
-                <span>100</span>
-                <span>Rs-200</span>
+              <div
+                className="row-1 w-100 rounded  p-2 d-flex justify-content-between align-items-center mb-2"
+                style={{
+                  borderColor: "black",
+                  borderStyle: "solid",
+                  borderWidth: selQuant == 400 ? "3px" : "1px",
+                }}
+                onClick={() => {
+                  setSelQuant(400);
+                  setPrice(600);
+                }}
+              >
+                <span>400</span>
+                <span>Rs-600</span>
                 <span>25% sevings</span>
               </div>
-              <div className="row-1 w-100 border border-dark rounded  p-2 d-flex justify-content-between align-items-center mb-2">
-                <span>100</span>
-                <span>Rs-200</span>
-                <span>25% sevings</span>
-              </div>
-              <div className="row-1 w-100 border border-dark rounded  p-2 d-flex justify-content-between align-items-center mb-2">
-                <span>100</span>
-                <span>Rs-200</span>
+              <div className="row-1 w-100 border border-dark rounded  p-2 d-flex justify-content-between align-items-center mb-2"
+                style={{
+                  borderColor: "black",
+                  borderStyle: "solid",
+                  borderWidth: selQuant == 400 ? "3px" : "1px",
+                }}
+                onClick={() => {
+                  setSelQuant(500);
+                  setPrice(700);
+                }}>
+                <span>500</span>
+                <span>Rs-700</span>
                 <span>25% sevings</span>
               </div>
             </div>
@@ -216,7 +415,10 @@ export default function StdVcard() {
               <button className="col-1 w-50 rounded fs-5 p-2 bg-primary">
                 Add To Cart
               </button>
-              <button className="col-2 w-50 rounded fs-5 p-2 bg-primary">
+              <button className="col-2 w-50 rounded fs-5 p-2 bg-primary"
+                onClick={() => {
+                  navigate("/order", { state: orders })
+                }}>
                 Order
               </button>
             </div>
@@ -261,6 +463,8 @@ export default function StdVcard() {
           </button>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
