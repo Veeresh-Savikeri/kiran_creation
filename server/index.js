@@ -73,6 +73,14 @@ app.put('/order', async (req, res) => {
         res.status(500).send({ message: 'Error updating order', error: error.message });
     }
 });
+app.get('/order', async (req, res) => {
+    try {
+        const orders = await Order.find(); // Fetch all orders
+        res.status(200).send(orders); // Send orders with 200 status
+    } catch (error) {
+        res.status(500).send({ message: 'Error fetching orders', error: error.message });
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

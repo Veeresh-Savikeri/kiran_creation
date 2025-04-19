@@ -35,7 +35,7 @@ export default function Order() {
         <h1 className="fw-bold text-center mt-3">Your Order</h1>
         <div className="orderCard shadow-lg p-3 mb-5 mt-3 rounded">
           <div
-            className=" card d-flex flex-row justify-content-between align-items-center p-3 border border-3 border-dark m-auto"
+            className=" card d-flex flex-row justify-content-between align-items-center flex-wrap p-3 border border-3 border-dark m-auto"
             style={{ backgroundColor: "gray", width: "auto", color: "white" }}
           >
             <img
@@ -46,7 +46,7 @@ export default function Order() {
               height="150px"
               style={{ borderRadius: "8px", border: "3px solid white" }}
             />
-            <div className="d-flex flex-column justify-content-center align-items-start ms-5">
+            <div className="d-flex flex-column justify-content-center align-items-start ms-3">
               <h2 className="card-title fw-bold text-warning">{orders.name}</h2>
               <h4 className="card-title fw-bold"> Sides : {orders.sides}</h4>
               <h4 className="card-title fw-bold"> Corner : {orders.corners}</h4>
@@ -58,7 +58,7 @@ export default function Order() {
             </div>
           </div>
           <div className="orderCardText">
-            <h2 className="text-center fw-bold">Add additional Information</h2>
+            <h2 className="text-center fw-bold">Add Additional Information</h2>
             <div>
               <label className="fw-bold">Name : </label>
               <input

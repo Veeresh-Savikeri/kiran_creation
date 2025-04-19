@@ -14,9 +14,9 @@
         gap: 20px;
     }
     .orderCard img {
-       width: 130px;
+       width: 90%;
        height: 130px;
-       margin: 0px;
+       margin: auto;
        padding: 0px;
     }
     .orderCard div {
@@ -35,6 +35,19 @@
     }
     .subOrderCard div h4{
         font-size: 15px;
+    } 
+}
+
+.PodImg{
+    margin-left: 10px;
+   
+}
+.PodImg img{
+    border : 4px solid #000;
+}
+@media (max-width: 768px) {
+    .PodImg {
+        margin: auto;
+       
     }
-    
 }
