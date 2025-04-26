@@ -81,7 +81,21 @@ app.get('/order', async (req, res) => {
         res.status(500).send({ message: 'Error fetching orders', error: error.message });
     }
 });
-
+app.post('/track',async(req,res)=>{
+    try {
+        const{phone,password} = req.body;
+        const data = await Order.find({phone,password})
+        if(data){
+         res.status(200).send(data)
+        }else{
+         res.send({})
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+  
+})
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 }); 

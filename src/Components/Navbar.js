@@ -99,9 +99,12 @@ export default function Navbar() {
                 }}
               ></i>
               <i
-                className="fa fa-heart ms-4 me-4"
+                className="fa fa-truck ms-4 me-4"
                 aria-hidden="true"
                 style={{ fontSize: "30px", marginRight: "20px" }}
+                onClick={()=>{
+                  navigate("/track")
+                }}
               ></i>
             </div>
           </div>

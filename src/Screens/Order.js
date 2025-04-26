@@ -14,6 +14,11 @@ export default function Order() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState();
   const [address, setAddress] = useState("");
+  const [approved, setApproved] = useState(false);
+  const [delivered, setDelivered] = useState(false);
+  const [password, setPassword] = useState("");
+  const [date, setDate] = useState();
+
 
   const orderDetails = {
     product_name: orders.name,
@@ -26,6 +31,10 @@ export default function Order() {
     phone: phone,
     address: address,
     payment: pay,
+    password: password,
+    approved: approved,
+    delivered: delivered,
+    deliver_date : date
   };
 
   return (
@@ -84,7 +93,23 @@ export default function Order() {
                 onChange={(e) => setAddress(e.target.value)}
                 value={address}
               />
+              <label className="fw-bold">Set Password : </label>
+              <input
+                type="password"
+                className="form-control mb-3"
+                placeholder="To rack your order..."
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+              <label className="fw-bold">Date For Deliver</label>
+              <input
+                type="date"
+                className="form-control mb-3"
+                onChange={(e) => setDate(e.target.value)}
+                value={date}
+              />
             </div>
+            
             <button
               className="btn btn-primary fw-bold"
               onClick={() => {

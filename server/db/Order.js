@@ -27,20 +27,32 @@ const orderSchema = new mongoose.Schema({
     },
     name:{
         type: String,
-       
     },
     phone: {
         type: Number,
-       
     },
     address: {
         type: String,
-       
     },
     payment: {
-        type: Boolean,
-        
+        type: Boolean,   
     },
-});
+    password: {
+        type: String,
+        required: true,
+    },
+    approved: {
+        type: Boolean,
+        required: true,
+    },
+    delivered: {
+        type: Boolean,
+        required: true
+    },
+    deliver_date: {
+        type: String,
+    },
+   
+},{timestamps: true});
 
 module.exports = mongoose.model('orders', orderSchema);

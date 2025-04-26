@@ -10,6 +10,7 @@ import ClsVCard from './Screens/ClsVCard';
 import Cart from './Screens/Cart';
 import Order from './Screens/Order';
 import OrderList from './Screens/OrderList';
+import TrackOrd from './Screens/TrackOrd';
 
 
 function App() {
@@ -25,9 +26,10 @@ function App() {
           <Route element={<Auth />} >
           <Route path="/private" element={<Private />} />
           <Route path="/private/p_contacts" element={<P_contacts />} />
-          <Route path="/orderlist" element={<OrderList />} />
+          <Route path="/private/orderlist" element={<OrderList />} />
           </Route>
           <Route path="/order" element={<Order />} /> 
+          <Route path="/track" element={<TrackOrd />} />
         </Routes>
       </Router>
 

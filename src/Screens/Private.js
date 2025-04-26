@@ -25,7 +25,11 @@ export default function Private() {
           </Link>
         </div>
         <div className="cards mt-5 btn btn-dark border border-success border-2 shadow">
-          <h2 className="text-center fw-bold">Ordered Notification</h2>
+        <Link to="/private/orderlist"  style={{ textDecoration: "none" }}>
+            <h2 className="text-center fw-bold text-white">
+             Order Notifications
+            </h2>
+          </Link>
         </div>
         <div className="cards mt-5 btn  btn-dark border border-success border-2 shadow">
           <h2 className="text-center fw-bold">Contact Notification</h2>

@@ -28,7 +28,7 @@ export default function OrderList() {
         position: "relative",
       }}>
       <Navbar />
-      <h2 className="text-center fw-bold">Order List</h2>
+      <h1 className="text-center fw-bold text-white" style={{textShadow:"2px 2px 2px black"}}>Order List</h1>
       <div className="container "
       >
         {orders.map((order, index) => {
@@ -47,7 +47,7 @@ export default function OrderList() {
                   className="img-fluid rounded"
                 />
               </div>
-              <div>
+              <div  className="d-flex flex-column justify-content-between align-items-start">
                 <h3 className="fw-bold text-warning">Product Info</h3>
                 <h6 className="fw-bold">Product Name: {order.product_name}</h6>
                 <h6 className="fw-bold">Product Price: {order.price}</h6>
@@ -56,7 +56,7 @@ export default function OrderList() {
                   Payment Status: {order.payment ? "May Paid" : "Not Paid"}
                 </h6>
               </div>
-              <div>
+              <div className="d-flex flex-column justify-content-between align-items-start">
                 <h3 className="fw-bold text-warning">Personal Info</h3>
                 <h6 className="fw-bold">Name: {order.name}</h6>
                 <h6 className="fw-bold">Phone No: {order.phone}</h6>
@@ -66,6 +66,7 @@ export default function OrderList() {
                 </h6>
               </div>
               <div className="d-flex flex-column justify-content-between align-item-center">
+              <input type="date" className="p-1 rounded boder boder-dark border-2" placeholder="Enter your number..." />
                 <button className="btn btn-primary w-100">Approve</button>
                 <button className="btn btn-success ">Deleverd</button>
                 <button className="btn btn-danger">Delete</button>
