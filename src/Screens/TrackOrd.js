@@ -39,6 +39,7 @@ export default function TrackOrd() {
   return (
     <div>
       <Navbar />
+      <h1 className="text-center fw-bold mt-3">Your Orders</h1>
       {track ? (
         <CheckTrack
           setTrack={setTrack}
@@ -53,6 +54,15 @@ export default function TrackOrd() {
             return (
               <div className="container shadow-lg col-lg-6 col-12 mt-5 rounded">
                 <div className="d-flex justify-content-between align-items-center flex-row flex-wrap p-4 bg-secondary text-white rounded mt-2 shadow-lg ">
+                <div>
+                    <img
+                      src={item.product_image}
+                      alt=""
+                      width="150"
+                      height="150"
+                      className="rounded border border-2 border-dark "
+                    />
+                  </div>
                   <div>
                     <h4 className="text-warning fw-bold text-center">
                       Personal info
@@ -69,15 +79,7 @@ export default function TrackOrd() {
                     <p>Quantity : {item.quantity}</p>
                     <p>Price : {item.price}/-</p>
                   </div>
-                  <div>
-                    <img
-                      src={item.product_image}
-                      alt=""
-                      width="150"
-                      height="150"
-                      className="rounded border border-2 border-dark "
-                    />
-                  </div>
+                 
                 </div>
 
                 <div className="d-flex justify-content-center flex-column w-100 mt-4">
