@@ -21,7 +21,7 @@ export default function CheckTrack(props) {
              Phone No
             </label>
             <input
-              type="email"
+              type="number"
               id="form2Example1"
               className="form-control"
               onChange={(e) => {

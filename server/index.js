@@ -73,6 +73,28 @@ app.put('/order', async (req, res) => {
         res.status(500).send({ message: 'Error updating order', error: error.message });
     }
 });
+
+app.put('/order/update/:id', async (req, res) => {
+    try {
+        const { id } = req.params; // Extract the order ID from the request parameters
+        const { approved, delivered, deliver_date } = req.body; // Extract fields from the request body
+
+        // Update the order with the provided fields
+        const result = await Order.updateOne(
+            { _id: id },
+            { $set: { approved, delivered, deliver_date } }
+        );
+
+        if (result.modifiedCount > 0) {
+            res.status(200).send({ message: 'Order updated successfully' });
+        } else {
+            res.status(404).send({ message: 'Order not found or no changes made' });
+        }
+    } catch (error) {
+        res.status(500).send({ message: 'Error updating order', error: error.message });
+    }
+});
+
 app.get('/order', async (req, res) => {
     try {
         const orders = await Order.find(); // Fetch all orders
@@ -94,8 +116,21 @@ app.post('/track',async(req,res)=>{
     } catch (error) {
         console.log(error)
     }
-  
 })
+app.delete('/order/:id', async (req, res) => {
+    try {
+        const { id } = req.params; // Extract the order ID from the request parameters
+        const result = await Order.deleteOne({ _id: id }); // Delete the order by its ID
+        if (result.deletedCount > 0) {
+            res.status(200).send({ message: 'Order deleted successfully' });
+        } else {
+            res.status(404).send({ message: 'Order not found' });
+        }
+    } catch (error) {
+        res.status(500).send({ message: 'Error deleting order', error: error.message });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-}); 
+});

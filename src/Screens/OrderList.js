@@ -1,79 +1,181 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import '../Css/order.css'
+import "../Css/order.css";
 
-import { useState, useEffect } from "react";
 export default function OrderList() {
   const [orders, setOrders] = useState([]);
+
+  // Fetch orders on component mount
   useEffect(() => {
+    fetchOrders();
+  }, []);
+
+  // Function to fetch orders
+  const fetchOrders = () => {
     fetch("http://localhost:5000/order")
       .then((response) => response.json())
       .then((data) => {
         setOrders(data);
-        console.log(data);
+       
       })
       .catch((error) => {
         console.error("Error fetching orders:", error);
       });
-  }, []);
+  };
+
+  // Function to delete an order
+  const deleteOrder = (id) => {
+    fetch(`http://localhost:5000/order/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Order deleted successfully");
+          fetchOrders(); // Refresh the order list after deletion
+        } else {
+          alert("Failed to delete the order");
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting order:", error);
+      });
+  };
+
+  const updateOrder = (id, approved, delivered, deliver_date) => {
+    fetch(`http://localhost:5000/order/update/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json", // Specify JSON content type
+      },
+      body: JSON.stringify({
+        approved: approved,
+        delivered: delivered,
+        deliver_date: deliver_date,
+      }), // Send updated fields in the request body
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Order updated successfully");
+          fetchOrders(); // Refresh the order list after updating
+        } else {
+          alert("Failed to update the order");
+        }
+      })
+      .catch((error) => {
+        console.error("Error updating order:", error);
+      });
+  };
 
   return (
-    <div  style={{
+    <div
+      style={{
         backgroundImage:
           "url(https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJsdXUlMjB3aGl0ZXxlbnwwfHx8fDE2OTI5NzY1NTg&ixlib=rb-4.0.3&q=80&w=1080)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
         position: "relative",
-      }}>
+      }}
+    >
       <Navbar />
-      <h1 className="text-center fw-bold text-white" style={{textShadow:"2px 2px 2px black"}}>Order List</h1>
-      <div className="container "
+      <h1
+        className="text-center fw-bold text-white"
+        style={{ textShadow: "2px 2px 2px black" }}
       >
-        {orders.map((order, index) => {
-          return (
-            <div
-              className="card  mb-5 p-4 shadow-lg d-flex flex-row justify-content-between align-item-center flex-wrap "
-              key={index}
-             
-            >
-              <div className="PodImg">
-                <img
-                  src={order.product_image}
-                  alt=""
-                  width="150px"
-                  height="150px"
-                  className="img-fluid rounded"
-                />
+        Order List
+      </h1>
+      <div className="container">
+        {orders
+          .slice()
+          .reverse()
+          .map((order, index) => {
+            return (
+              <div
+                className="card mb-5 p-4 shadow-lg d-flex flex-row justify-content-between align-item-center flex-wrap"
+                key={index}
+              >
+                <div className="PodImg">
+                  <img
+                    src={order.product_image}
+                    alt=""
+                    width="150px"
+                    height="150px"
+                    className="img-fluid rounded"
+                  />
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-start">
+                  <h3 className="fw-bold text-warning">Product Info</h3>
+                  <h6 className="fw-bold">
+                    Product Name: {order.product_name}
+                  </h6>
+                  <h6 className="fw-bold">Product Price: {order.price}</h6>
+                  <h6 className="fw-bold">
+                    Product Quantity: {order.quantity}
+                  </h6>
+                  <h6 className="fw-bold">
+                    Payment Status: {order.payment ? "May Paid" : "Not Paid"}
+                  </h6>
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-start">
+                  <h3 className="fw-bold text-warning">Personal Info</h3>
+                  <h6 className="fw-bold">Name: {order.name}</h6>
+                  <h6 className="fw-bold">Phone No: {order.phone}</h6>
+                  <h6 className="fw-bold">Address: {order.address}</h6>
+                  <h6 className="fw-bold">
+                    Payment Status: {order.payment ? "May Paid" : "Not Paid"}
+                  </h6>
+                </div>
+                <div className="d-flex flex-column justify-content-between align-item-center">
+                  <input
+                    type="date"
+                    className="p-1 rounded boder boder-dark border-2"
+                    placeholder="Enter your number..."
+                  />
+                  <button
+                    className="btn btn-primary w-100"
+                    onClick={() => {
+                      updateOrder(
+                        order._id,
+                        !order.approved,
+                        order.delivered,
+                        order.deliver_date
+                      );
+                    }}
+                  >
+                    {order.approved ? "ok, " : "not "} Approved
+                  </button>
+                  <button
+                    className="btn btn-success"
+                    onClick={() => {
+                      updateOrder(
+                        order._id,
+                        order.approved,
+                        !order.delivered,
+                        order.deliver_date
+                      );
+                    }}
+                  >
+                    {order.delivered ? "Delivered" : "Delivered ?"} 
+                  </button>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => {
+                      const confirmDelete = window.confirm(
+                        "Are you sure you want to delete this order?"
+                      );
+                      if(confirmDelete){
+                        deleteOrder(order._id);
+                      }
+                                           
+                    }} // Call deleteOrder with the order ID
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
-              <div  className="d-flex flex-column justify-content-between align-items-start">
-                <h3 className="fw-bold text-warning">Product Info</h3>
-                <h6 className="fw-bold">Product Name: {order.product_name}</h6>
-                <h6 className="fw-bold">Product Price: {order.price}</h6>
-                <h6 className="fw-bold">Product Quantity: {order.quantity}</h6>
-                <h6 className="fw-bold">
-                  Payment Status: {order.payment ? "May Paid" : "Not Paid"}
-                </h6>
-              </div>
-              <div className="d-flex flex-column justify-content-between align-items-start">
-                <h3 className="fw-bold text-warning">Personal Info</h3>
-                <h6 className="fw-bold">Name: {order.name}</h6>
-                <h6 className="fw-bold">Phone No: {order.phone}</h6>
-                <h6 className="fw-bold">Address: {order.address}</h6>
-                <h6 className="fw-bold">
-                  Payment Status: {order.payment ? "May Paid" : "Not Paid"}
-                </h6>
-              </div>
-              <div className="d-flex flex-column justify-content-between align-item-center">
-              <input type="date" className="p-1 rounded boder boder-dark border-2" placeholder="Enter your number..." />
-                <button className="btn btn-primary w-100">Approve</button>
-                <button className="btn btn-success ">Deleverd</button>
-                <button className="btn btn-danger">Delete</button>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
       <Footer />
     </div>

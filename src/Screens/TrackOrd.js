@@ -29,7 +29,6 @@ export default function TrackOrd() {
       .then((data) => {
         if (data && data.length > 0) {
           setData(data);
-          console.log(data);
         } else {
           alert("Invalid Phone No Or Password");
           navigate("/");
