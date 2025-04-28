@@ -48,12 +48,27 @@ app.get('/cont_det', async (req, res) => {
 
 app.post('/cont_upd', async (req, res) => {
     try {
-        const contact = await Contact.updateOne({ message: req.body.message }, { $set: { "approve": true }}); // Update a document
+       
+        const contact = await Contact.updateOne({ message: req.body.message }, { $set: { "approve":"true"  }}); // Update a document
         res.status(200).send({ message: 'Contact updated successfully', data: contact });
     } catch (error) {
         res.status(500).send({ message: 'Error updating contact', error: error.message });
     }
 });
+
+app.delete('/contact/:id',async(req,res)=>{
+    try {
+        const { id } = req.params; // Extract the order ID from the request parameters
+        const result = await Contact.deleteOne({ _id: id }); // Delete the order by its ID
+        if (result.deletedCount > 0) {
+            res.status(200).send({ message: 'Order deleted successfully' });
+        } else {
+            res.status(404).send({ message: 'Order not found' });
+        }
+    } catch (error) {
+        res.status(500).send({ message: 'Error deleting order', error: error.message });
+    }
+})
 
 app.post('/order', async (req, res) => {
     try {

@@ -7,18 +7,38 @@ export default function PContacts() {
 
   // Fetch data using useEffect
   useEffect(() => {
-    fetch("http://localhost:5000/cont_det")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch contacts");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setCont_det(data);
-      })
-      .catch((error) => console.error("Error fetching contacts:", error));
+    contact()
   }, []); // Empty dependency array ensures this runs only once
+  
+const contact = ()=>{
+  fetch("http://localhost:5000/cont_det")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Failed to fetch contacts");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    setCont_det(data);
+  })
+  .catch((error) => console.error("Error fetching contacts:", error));
+}
+  const deleteContact = (id)=>{
+    fetch(`http://localhost:5000/contact/${id}`,{
+      method:"DELETE"
+    }) .then((response) => {
+      if (response.ok) {
+        alert("Contact deleted successfully");
+        contact()
+         // Refresh the order list after deletion
+      } else {
+        alert("Failed to delete the order");
+      }
+    })
+    .catch((error) => {
+      console.error("Error deleting order:", error);
+    });
+  }
 
   return (
     <div
@@ -85,12 +105,13 @@ export default function PContacts() {
                       className="fa fa-check me-3"
                       aria-hidden="true"
                       style={{ fontSize: "20px" }}
+                    
                     >
                       Approved
                     </i>
                   )}
 
-                  <button className="btn btn-primary">Delivered</button>
+                  <button className="btn btn-primary"  onClick={()=>{deleteContact(contact._id)}}>Delete</button>
                 </div>
               </div>
             ))}
