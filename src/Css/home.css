@@ -21,3 +21,19 @@
         width: 12rem;
     }
 }
+.scroll-wrapper,.circle-scroll-wrapper{
+    overflow-x: none;
+  }
+  
+  .scroll-container,.circle-scroll-container {
+    display: flex;
+    gap: 5vw;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    width: 100%; 
+    scrollbar-width:none;
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    display: none; 
+  }

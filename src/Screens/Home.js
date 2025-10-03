@@ -7,6 +7,8 @@ import clsVCard from "../imgs/clsVCard.webp";
 import squVCard from "../imgs/squVCard.webp";
 import "../Css/home.css";
 import Footer from "../Components/Footer";
+import CircleCat from "../Components/CircleCat";
+
 
 export default function Home() {
   function scrollLeft() {
@@ -23,7 +25,10 @@ export default function Home() {
     <div>
       <Navbar />
       <Carousel />
+     <CircleCat/>
+
       <div>
+
         <h1 className="text-start ms-5 mt-5 fw-bold">Related Products</h1>
         <div className="scroll-wrapper position-relative">
           <button className="btn btn-primary scroll-left" onClick={scrollLeft}>
@@ -31,7 +36,8 @@ export default function Home() {
           </button>
 
           <div className="scroll-container d-flex align-items-center">
-            <Rel_card
+           
+              <Rel_card
               pto={stdVCard}
               title="Standard Visiting Card"
               price="100 Starting at Rs-250"
@@ -51,7 +57,6 @@ export default function Home() {
             />
             <Rel_card />
           </div>
-
           <button
             className="btn btn-primary scroll-right"
             onClick={scrollRight}
@@ -60,7 +65,8 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <Footer/>
+
+      <Footer />
     </div>
   );
 }

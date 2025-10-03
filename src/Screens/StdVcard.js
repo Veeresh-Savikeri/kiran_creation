@@ -24,8 +24,8 @@ export default function StdVcard() {
   const [corners, setCorners] = useState("sharp");
   const [price, setPrice] = useState(250);
   const [pto, setPto] = useState(selectedImage);
+  const [more, setMore] = useState("none");
   const navigate = useNavigate();
-
 
   function scrollLeft() {
     const container = document.querySelector(".scroll-container");
@@ -45,7 +45,7 @@ export default function StdVcard() {
     sides: sides,
     corners: corners,
     image: selectedImage,
-  }
+  };
   return (
     <div>
       <Navbar />
@@ -281,11 +281,26 @@ export default function StdVcard() {
           >
             <h2 className="text-center fw-bold">Standard Visition Card</h2>
             <ul>
-              <li>cdc</li>
-              <li>cdc</li>
-              <li>cd</li>
-              <li>dc</li>
-              <li>cd</li>
+              <li>
+                Standard Visiting Cards are a professional way to share your
+                contact details and leave a lasting impression.
+              </li>
+              <li>
+                They are printed on high-quality paper with customizable designs
+                to suit your brand.
+              </li>
+              <li>
+                Available in single or double-sided options, they are perfect
+                for networking and business promotion.
+              </li>
+              <li>
+                Affordable and versatile, these cards are ideal for
+                professionals, entrepreneurs, and businesses.
+              </li>
+              <li>
+                Customizable Options: Choose from various designs, quantities,
+                and finishes to match your unique style and branding needs.
+              </li>
             </ul>
             <h4 className="text-start fw-bold mt-3">Sides</h4>
             <div className="row">
@@ -325,8 +340,7 @@ export default function StdVcard() {
               className="w-100 rounded fs-6 p-2 border border-dark rounded border-3"
               onClick={(e) => {
                 setCorners(e.target.value);
-              }
-              }
+              }}
             >
               <option value="sharp">Sharp</option>
             </select>
@@ -396,7 +410,8 @@ export default function StdVcard() {
                 <span>Rs-600</span>
                 <span>25% sevings</span>
               </div>
-              <div className="row-1 w-100 border border-dark rounded  p-2 d-flex justify-content-between align-items-center mb-2"
+              <div
+                className="row-1 w-100 border border-dark rounded  p-2 d-flex justify-content-between align-items-center mb-2"
                 style={{
                   borderColor: "black",
                   borderStyle: "solid",
@@ -405,20 +420,99 @@ export default function StdVcard() {
                 onClick={() => {
                   setSelQuant(500);
                   setPrice(700);
-                }}>
+                }}
+              >
                 <span>500</span>
                 <span>Rs-700</span>
                 <span>25% sevings</span>
+              </div>
+              <p
+                className="text-primary text-center"
+                style={{
+                  cursor: "pointer",
+                  display: more == "none" ? "block" : "none",
+                }}
+                onClick={() => setMore("block")}
+              >
+                more...
+              </p>
+              <div style={{ display: more }}>
+                <div
+                  className="row-1 w-100 border border-dark rounded  p-2 d-flex justify-content-between align-items-center mb-2"
+                  style={{
+                    borderColor: "black",
+                    borderStyle: "solid",
+                    borderWidth: selQuant == 400 ? "3px" : "1px",
+                  }}
+                  onClick={() => {
+                    setSelQuant(500);
+                    setPrice(700);
+                  }}
+                >
+                  <span>500</span>
+                  <span>Rs-700</span>
+                  <span>25% sevings</span>
+                </div>
+                <div
+                  className="row-1 w-100 border border-dark rounded  p-2 d-flex justify-content-between align-items-center mb-2"
+                  style={{
+                    borderColor: "black",
+                    borderStyle: "solid",
+                    borderWidth: selQuant == 400 ? "3px" : "1px",
+                  }}
+                  onClick={() => {
+                    setSelQuant(500);
+                    setPrice(700);
+                  }}
+                >
+                  <span>500</span>
+                  <span>Rs-700</span>
+                  <span>25% sevings</span>
+                </div>
+                <div
+                  className="row-1 w-100 border border-dark rounded  p-2 d-flex justify-content-between align-items-center mb-2"
+                  style={{
+                    borderColor: "black",
+                    borderStyle: "solid",
+                    borderWidth: selQuant == 400 ? "3px" : "1px",
+                  }}
+                  onClick={() => {
+                    setSelQuant(500);
+                    setPrice(700);
+                  }}
+                >
+                  <span>500</span>
+                  <span>Rs-700</span>
+                  <span>25% sevings</span>
+                </div>
+                <div
+                  className="row-1 w-100 border border-dark rounded  p-2 d-flex justify-content-between align-items-center mb-2"
+                  style={{
+                    borderColor: "black",
+                    borderStyle: "solid",
+                    borderWidth: selQuant == 400 ? "3px" : "1px",
+                  }}
+                  onClick={() => {
+                    setSelQuant(500);
+                    setPrice(700);
+                  }}
+                >
+                  <span>500</span>
+                  <span>Rs-700</span>
+                  <span>25% sevings</span>
+                </div>
               </div>
             </div>
             <div className="row">
               <button className="col-1 w-50 rounded fs-5 p-2 bg-primary">
                 Add To Cart
               </button>
-              <button className="col-2 w-50 rounded fs-5 p-2 bg-primary"
+              <button
+                className="col-2 w-50 rounded fs-5 p-2 bg-primary"
                 onClick={() => {
-                  navigate("/order", { state: orders })
-                }}>
+                  navigate("/order", { state: orders });
+                }}
+              >
                 Order
               </button>
             </div>
